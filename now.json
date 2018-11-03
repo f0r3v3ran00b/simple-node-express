@@ -1,6 +1,6 @@
 {
     "env": {
-        "SOME_SECRET": "@some-secret",
-        "NOT_SECRET": "Whoa!"
+        "PORT": "3000",
+        "MY_NAME": "Sanay [From Zeit Env Variable]"
     }
 }
