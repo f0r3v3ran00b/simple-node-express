@@ -1,4 +1,4 @@
-# Simple API to dpeloy to Heroku
+# Simple node express example.
 
 ## Running stuff
 
