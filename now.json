@@ -1,0 +1,6 @@
+{
+    "env": {
+        "SOME_SECRET": "@some-secret",
+        "NOT_SECRET": "Whoa!"
+    }
+}
