@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "mocha 'test/api-test.js'"
   },
   "keywords": [],
@@ -16,5 +17,13 @@
   "devDependencies": {
     "mocha": "5.2.0",
     "supertest": "3.3.0"
+  },
+  "engines": {
+    "node": "10.3.0"
+  },
+  "now": {
+    "engines": {
+      "node": "10.3.0"
+    }
   }
 }
