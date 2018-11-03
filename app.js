@@ -11,6 +11,13 @@ app.get("/", function (req, res) {
     }));
 });
 
+app.post("/subject", (req, res) => {
+    res.send(JSON.stringify({
+        subject: `dummy`,
+        transaction_id: req.query[`transaction_id`]
+    }));
+});
+
 app.listen(port, function () {
     console.log(`Example app listening on port ${port}!`);
 });
