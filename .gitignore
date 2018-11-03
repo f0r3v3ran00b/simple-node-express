@@ -1000,3 +1000,6 @@ ASALocalRun/
 .localhistory/
 
 # End of https://www.gitignore.io/api/vim,node,java,ruby,macos,maven,gradle,python,java-web,intellij,mavensmate,salesforce,sublimetext,intellij+all,salesforcedx,visualstudio,intellij+iml,visualstudiocode
+
+
+./.env
