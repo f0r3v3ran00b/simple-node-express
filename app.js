@@ -6,18 +6,22 @@ const name = process.env.MY_NAME || `[Name not set in environment variables]`
 
 app.get("/", function (req, res) {
 
+    res.setHeader('content-type', 'application/json');
     res.send(JSON.stringify({
-        message: `Root page. Hello ${name}. The time is now: ${moment().format()}`
+        message: `Root page. Hello ${name}.`
     }));
 });
 
 app.post("/subject", (req, res) => {
     res.send(JSON.stringify({
         subject: `dummy`,
-        transaction_id: req.query[`transaction_id`]
+        transaction_id: req.query[`transaction_id`],
+        created_date: $moment().format()
     }));
 });
 
 app.listen(port, function () {
     console.log(`Example app listening on port ${port}!`);
 });
+
+module.exports = app
