@@ -2,6 +2,7 @@ let express = require("express");
 let port = process.env.PORT || 3000;
 let app = express();
 let moment = require('moment');
+const name = process.env.MY_NAME || `[Name not set in environment variables]`
 
 app.get("/", function (req, res) {
 
