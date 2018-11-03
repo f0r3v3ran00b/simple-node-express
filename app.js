@@ -7,7 +7,7 @@ const name = process.env.MY_NAME || `[Name not set in environment variables]`
 app.get("/", function (req, res) {
 
     res.send(JSON.stringify({
-        Hello: `Root page. Hello world. The time is now: ${moment().format()}`
+        message: `Root page. Hello ${name}. The time is now: ${moment().format()}`
     }));
 });
 
