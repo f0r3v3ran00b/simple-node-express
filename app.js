@@ -3,6 +3,12 @@ const router = express.Router();
 let port = process.env.PORT || 3000;
 let app = express();
 let moment = require('moment');
+let bodyparser = require('body-parser')
+const addRequestId = require('express-request-id')();
+const serverless = require('serverless-http');
+
+
+
 const name = process.env.MY_NAME || `[Name not set in environment variables]`
 
 // Example using Router - Gets resolved to /routes because of how it's mounted below
@@ -39,10 +45,15 @@ app.get("/users/:userid/vices/:viceid", (req, res) => {
     }))
 });
 
-app.use('/routes', router) // 4
+app.use(addRequestId);
+app.use('/routes', router);
+app.use(bodyparser.json())
+app.use('/.netlify/functions/server', router);
 
 app.listen(port, function () {
     console.log(`Example app listening on port ${port}!`);
 });
 
+
 module.exports = app
+module.exports.handler = serverless(app);

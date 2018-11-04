@@ -4,15 +4,26 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "build": "netlify-lambda build express",
     "start": "node app.js",
     "test": "mocha 'test/api-test.js'"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "netlify",
+    "express.js",
+    "docker",
+    "heroku"
+  ],
+  "author": "Sanjay Srinivas",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "1.18.3",
     "express": "4.16.4",
-    "moment": "2.22.2"
+    "express-request-id": "1.4.1",
+    "moment": "2.22.2",
+    "morgan": "1.9.1",
+    "netlify-lambda": "1.0.2",
+    "serverless-http": "1.8.0"
   },
   "devDependencies": {
     "mocha": "5.2.0",
