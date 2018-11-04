@@ -38,3 +38,12 @@ The above will build the image and run it. The app will be available on `localho
 $> heroku login
 $> git push heroku master
 ```
+
+### Netlify Functions
+
+We can now deploy our express apps as AWS Lambdas using the Netlify functions abstraction.
+For now, the code is duplicated. So there is non-netlify version, and the netlify version under netlify-functions. Gotta fix this!
+
+```
+$> curl https://friendly-davinci-6dd439.netlify.com/.netlify/functions/server
+```
