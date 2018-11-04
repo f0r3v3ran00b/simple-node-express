@@ -8,15 +8,15 @@ let moment = require('moment');
 let bodyparser = require('body-parser')
 const addRequestId = require('express-request-id')();
 const serverless = require('serverless-http');
-const morgan = require('morgan')
-var winston = require('./config/winston');
+//const morgan = require('morgan')
+//var winston = require('./config/winston');
 
 
 const name = process.env.MY_NAME || `[Name not set in environment variables]`
 
 // Example using Router - Gets resolved to /routes because of how it's mounted below
 router.get("/", function (req, res) {
-    winston.info('Hello again distributed logs');
+    //winston.info('Hello again distributed logs');
     res.setHeader('content-type', 'application/json');
     res.send(JSON.stringify({
         message: `[Using Router] Root page. Hello ${name}.`
@@ -58,9 +58,11 @@ app.get("/users/:userid/vices/:viceid", (req, res) => {
 });
 
 app.use(addRequestId);
+/*
 app.use(morgan('combined', {
     stream: winston.stream
 }));
+*/
 app.use('/routes', router);
 app.use(bodyparser.json())
 app.use('/.netlify/functions/app', router);
