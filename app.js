@@ -38,6 +38,15 @@ app.post("/subject", (req, res) => {
     }));
 });
 
+router.get("/subject", (req, res) => {
+    res.send(JSON.stringify({
+        subject: `dummy`,
+        transaction_id: req.query[`transaction_id`],
+        created_date: `${moment().format()}`
+    }));
+});
+
+
 // Example using route parameters also request parameters! confusing sometimes...
 // Will resolve to, say, http://localhost:3000/users/sanju/vices/wine
 app.get("/users/:userid/vices/:viceid", (req, res) => {
@@ -54,7 +63,7 @@ app.use(morgan('combined', {
 }));
 app.use('/routes', router);
 app.use(bodyparser.json())
-app.use('/.netlify/functions/server', router);
+app.use('/.netlify/functions/app', router);
 
 app.listen(port, function () {
     console.log(`Example app listening on port ${port}!`);

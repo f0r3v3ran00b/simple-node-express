@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "build": "netlify-lambda build netlify-functions",
+    "build": "netlify-lambda build .",
     "start": "node app.js",
     "test": "mocha 'test/api-test.js'"
   },
